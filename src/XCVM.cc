@@ -18,7 +18,7 @@ CXCVM::CXCVM(int nA, int nB)
 
 CXCVM::~CXCVM() {}
 
-const long CXCVM::ToInt(const double dStat) const
+const int64_t CXCVM::ToInt(const double dStat) const
 {
    double iStat = dStat/m_dCoe;
 
@@ -28,10 +28,10 @@ const long CXCVM::ToInt(const double dStat) const
    double dFloor = floor( iStat );
 
    return (dFloor+dCeil < 2*iStat) ? 	 
-	   static_cast<long>(dCeil) : static_cast<long>(dFloor);
+	   static_cast<int64_t>(dCeil) : static_cast<int64_t>(dFloor);
 }
 
-const double CXCVM::ToDouble(const long iStat) const
+const double CXCVM::ToDouble(const int64_t iStat) const
 { return iStat*m_dCoe; }
 
 const int CXCVM::GCD()

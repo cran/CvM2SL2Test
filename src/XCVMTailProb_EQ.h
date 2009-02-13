@@ -24,7 +24,7 @@ public:
   virtual const double operator()(const double cvm) const;
      // compute the tail probability for given cvm
 
-  virtual const double operator()(const long Q) const;
+  virtual const double operator()(const int64_t Q) const;
      // compute the tail frequence for given Q
 
 protected:

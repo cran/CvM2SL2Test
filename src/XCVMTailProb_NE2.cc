@@ -7,7 +7,7 @@ CXCVMTailProb_NE2::CXCVMTailProb_NE2(int nA, int nB)
 const double CXCVMTailProb_NE2::operator()(const double cvm) const
 { return operator()(ToInt(cvm))/m_dFreqSum; }
 
-const double CXCVMTailProb_NE2::operator()(const long Q) const
+const double CXCVMTailProb_NE2::operator()(const int64_t Q) const
 {		
 	CXTailConvolution con; 
 

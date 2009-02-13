@@ -15,7 +15,7 @@ cvmts.test(x, y)
 }
 \value{score of the Cramer-von Mises two-sample test for given samples
 }
-\author{Yuanhui Xiao
+\author{Yuanhui Xiao and Ye Cui,
 Department of Mathematics and Statistics
 Georgia State University
 Atlanta, GA 30302

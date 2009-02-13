@@ -20,8 +20,7 @@ cvmts.pval(cvmstats, m, n)
 \references{Yaunhui Xiao, Alexander Gordon and Andrei Yakovlev (2007), 
 A C++ program for the Cramer-von Mises two sample test, 
 Journal of Statistical Software, 17(8),
-url{http://www.jstatsoft.org}
-}
+\url{http://www.jstatsoft.org}}
 \note{
 The function cvmts.pval() first construct the distribution
 function, which is represented as seqeunce of tables in my implementation.
@@ -34,7 +33,7 @@ the test scores for all pairs of samples, and then call this function.
 If you compute the p-values seperately, the process may be slow.
 }
 \author{
-Yuanhui Xiao, Department of Mathematics and Statistics, 
+Yuanhui Xiao and Ye Cui, Department of Mathematics and Statistics, 
 Georgia State University, Atlanta, Georgia, 30302
 \email{matyxx@langate.gsu.edu}
 }

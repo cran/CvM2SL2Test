@@ -11,6 +11,7 @@
 #define CXCVM_H
 
 #include <cmath>
+#include <stdint.h>
 
 class CXCVM{
 
@@ -21,16 +22,16 @@ public:
   
 protected:
 
-  const long   ToInt(const double dStat) const; // convert T2 to zeta
-  const double ToDouble(const long iStat) const; // convert zeta to T2
+  const int64_t   ToInt(const double dStat) const; // convert T2 to zeta
+  const double ToDouble(const int64_t iStat) const; // convert zeta to T2
 
   const int GCD(); // return the great common divisor using Euclidean algorithm
 
 protected:
 
   int m_nA, m_nB; // sample sizes
-  long m_nL;       // least common multiple of m_nA and m_nB
-  long m_nP, m_nQ; // m_nP = m_nL/m_nA, m_nQ = m_nL/m_nB
+  int64_t m_nL;       // least common multiple of m_nA and m_nB
+  int64_t m_nP, m_nQ; // m_nP = m_nL/m_nA, m_nQ = m_nL/m_nB
   
   double m_dCoe;  // coefficient 
 };

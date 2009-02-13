@@ -30,7 +30,7 @@ void CXCVMTailProb::TabulateFreqFuncts(int iStep)
    m_functs = new CXFreqFunct[m_nA+1];
 
    int u, v;
-   long d, iAdd;
+   int64_t d, iAdd;
 
    // initialize
    iAdd = 0;

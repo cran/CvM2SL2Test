@@ -12,6 +12,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <stdint.h>
 
 // Class CXFreqFunct
 
@@ -31,28 +32,28 @@ public:
 
       CXNode();
 
-      const long GetValue() const;
+      const int64_t GetValue() const;
       const double GetFreq() const;	  
 
-	  operator const long() const { return m_iV; }
+	  operator const int64_t() const { return m_iV; }
       
-      const CXNode &operator+=(long v); // adds iV to the value of the pair  
+      const CXNode &operator+=(int64_t v); // adds iV to the value of the pair  
 
       const CXNode &operator+=(const CXNode &Node); // adds freqs, summe same value
-      const CXNode &operator*=(int iF); // the freq is multiplied by iF
+      const CXNode &operator*=(int64_t iF); // the freq is multiplied by iF
 
 	      // The methods below only compare the values, no matter what the freqs are.
       bool operator==(const CXNode &Node) const;     
       bool operator<( const CXNode &Node) const;    
       
-      bool operator==(const long Node) const; 
-      bool operator<=(const long Node) const;
-      bool operator>=(const long Node) const;
-      bool operator<( const long Node) const;         
+      bool operator==(const int64_t Node) const; 
+      bool operator<=(const int64_t Node) const;
+      bool operator>=(const int64_t Node) const;
+      bool operator<( const int64_t Node) const;         
 
 	 protected:
 
-      long   m_iV; // the integer or value
+      int64_t  m_iV; // the integer or value
       double m_dF; // the frequency, which may be huge.
                    // So it is represented as double in
                    // instead of int.
@@ -78,16 +79,16 @@ public:
 
    const CXFreqFunct & operator=(const CXFreqFunct &);  // assignement  
    const CXFreqFunct & operator+=(const CXFreqFunct &); // sum of frequency functions 
-   const CXFreqFunct & operator*=(int iF); // each freq is multiplied by iF
-   const CXFreqFunct & operator+=(long iV); // shift the freq. funct or table
+   const CXFreqFunct & operator*=(int64_t iF); // each freq is multiplied by iF
+   const CXFreqFunct & operator+=(int64_t iV); // shift the freq. funct or table
    
    const int Size()     const;    // gets the number of pairs or nodes
    const int GetNodes() const;   // gets the number of pairs or nodes
    void ReSetNodes(int nNewNodes); // reset the number of nodes or pair in the table
 
-   const int MinIndexNotLessThan(long Q) const; // finds the smallest index of the pair or node
+   const int MinIndexNotLessThan(int64_t Q) const; // finds the smallest index of the pair or node
                                          // whose value is not less than Q
-   const int MinIndexNotLessThan(long Q, int LB, int UB) const;
+   const int MinIndexNotLessThan(int64_t Q, int LB, int UB) const;
                                            // Same as above, but the search is restricted
                                            // in the range (LB, UB)
    const double SumFreqs(int LB, int UB) const;  // computes the sum of the frequencies 

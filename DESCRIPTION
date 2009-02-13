@@ -1,8 +1,8 @@
 Package: CvM2SL2Test
-Version: 0.0-1
-Date:    2008-07-09
+Version: 0.0-2
+Date:    2009-02-13
 Title:   Cramer-von Mises Two Sample Tests
-Author:  Yuanhui Xiao <matyxx@langate.gsu.edu>
+Author:  Yuanhui Xiao <matyxx@langate.gsu.edu> and Ye Cui
 Maintainer: Yuanhui Xiao <matyxx@langate.gsu.edu>
 Depends:    
 Suggests:  
@@ -15,4 +15,4 @@ Description: The package contains two functions: one computes the Cramer-von Mis
   is more powerful than the Kolmogorov-Smirnov test, but it is less widely
   used than the latter. 
 License: GPL (Version 2 or later)
-Packaged: Fri Aug  8 13:57:42 2008; hornik
+Packaged: Mon Mar  9 17:37:05 2009; YuanhuiXiao

@@ -7,14 +7,14 @@ CXCVMTailProb_EQ::CXCVMTailProb_EQ(int nA)
 const double CXCVMTailProb_EQ::operator()(const double cvm) const
 { return operator()(ToInt(cvm))/m_dFreqSum; }
 
-const double CXCVMTailProb_EQ::operator()(const long Q) const
+const double CXCVMTailProb_EQ::operator()(const int64_t Q) const
 {
 	CXTailConvolution con;   
 
 	double dFreq = 0.0;   
 	for(int i=0; i<(m_nA+1)/2; i++){
       
-		long d = 2*i-m_nA;      
+		int64_t d = 2*i-m_nA;      
 		dFreq += con(m_functs[i], Q+d*d);		     
 	}
 	dFreq *= 2;
@@ -30,7 +30,7 @@ void CXCVMTailProb_EQ::TabulateFreqFuncts()
    m_functs = new CXFreqFunct[m_nA/2+1];
 
    int u, v;
-   long d;   
+   int64_t d;   
 
   // full v-loops     
 

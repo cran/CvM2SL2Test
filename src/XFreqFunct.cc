@@ -30,7 +30,7 @@ CXFreqFunct::CXNode::CXNode()
    m_dF = 1;
 }
 
-const long CXFreqFunct::CXNode::GetValue() const
+const int64_t CXFreqFunct::CXNode::GetValue() const
 {
    return m_iV;
 }
@@ -41,7 +41,7 @@ const double CXFreqFunct::CXNode::GetFreq() const
 }
 
 inline const CXFreqFunct::CXNode & 
-CXFreqFunct::CXNode::operator+=(long id2)
+CXFreqFunct::CXNode::operator+=(int64_t id2)
 {
    m_iV += id2; 
    return *this;
@@ -55,7 +55,7 @@ CXFreqFunct::CXNode::operator+=(const CXNode &node)
 }
 
 inline const CXFreqFunct::CXNode & 
-CXFreqFunct::CXNode::operator*=(int iNum)
+CXFreqFunct::CXNode::operator*=(int64_t iNum)
 {
    m_dF *= iNum;
    return *this;
@@ -71,22 +71,22 @@ inline bool CXFreqFunct::CXNode::operator<(const CXNode &Node) const
    return (m_iV < Node.m_iV);  
 }
 
-inline bool CXFreqFunct::CXNode::operator==(const long Node) const
+inline bool CXFreqFunct::CXNode::operator==(const int64_t Node) const
 {
    return m_iV == Node;  
 }
 
-inline bool CXFreqFunct::CXNode::operator<=(const long Node) const
+inline bool CXFreqFunct::CXNode::operator<=(const int64_t Node) const
 {
    return m_iV <= Node;
 }
 
-inline bool CXFreqFunct::CXNode::operator>=(const long Node) const
+inline bool CXFreqFunct::CXNode::operator>=(const int64_t Node) const
 {
    return m_iV >= Node;  
 }
 
-inline bool CXFreqFunct::CXNode::operator<(const long Node) const
+inline bool CXFreqFunct::CXNode::operator<(const int64_t Node) const
 {
    return m_iV < Node;  
 }
@@ -161,7 +161,7 @@ CXFreqFunct::operator+=(const CXFreqFunct &ff)
 }
 
 const CXFreqFunct &
-CXFreqFunct::operator*=(int iF)
+CXFreqFunct::operator*=(int64_t iF)
 {
    for(int i=1; i<=m_nNodes; i++)
       m_nodes[i] *= iF;  
@@ -170,7 +170,7 @@ CXFreqFunct::operator*=(int iF)
 }
 
 const CXFreqFunct &
-CXFreqFunct::operator+=(long iV)
+CXFreqFunct::operator+=(int64_t iV)
 {
   for(int i=1; i<=m_nNodes; i++)
      m_nodes[i] += iV;
@@ -200,7 +200,7 @@ void CXFreqFunct::ReSetNodes(int nNewNodes)
   m_nNodes = nNewNodes;
 }
 
-const int CXFreqFunct::MinIndexNotLessThan(long Q, int LB, int UB) const
+const int CXFreqFunct::MinIndexNotLessThan(int64_t Q, int LB, int UB) const
 {
     if(m_nodes[LB] >= Q){
 
@@ -228,7 +228,7 @@ const int CXFreqFunct::MinIndexNotLessThan(long Q, int LB, int UB) const
     }
 }
 
-const int CXFreqFunct::MinIndexNotLessThan(long Q) const
+const int CXFreqFunct::MinIndexNotLessThan(int64_t Q) const
 { return MinIndexNotLessThan(Q, 1, m_nNodes); }
 
 const double CXFreqFunct::SumFreqs(int LB, int UB) const
@@ -320,3 +320,4 @@ helper(const CXFreqFunct &F1, int n1, int S1,
 	}      
 	return dFreq;
 }
+
