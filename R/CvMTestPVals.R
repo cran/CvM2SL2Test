@@ -12,7 +12,7 @@
   len <- length(cvmstats)
   OutPut = .C("CvMTestPVal", as.integer(m), as.integer(n), 
                     as.double(cvmstats), as.integer(len),
-      pvals = as.double(len))
+      pvals = double(len))
 
   return(OutPut$pvals)
 }
