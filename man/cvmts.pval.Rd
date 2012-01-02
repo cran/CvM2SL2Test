@@ -33,9 +33,9 @@ the test scores for all pairs of samples, and then call this function.
 If you compute the p-values seperately, the process may be slow.
 }
 \author{
-Yuanhui Xiao and Ye Cui, Department of Mathematics and Statistics, 
+Yuanhui Xiao, Department of Mathematics and Statistics, 
 Georgia State University, Atlanta, Georgia, 30302
-\email{matyxx@langate.gsu.edu}
+\email{yxiao@gsu.edu}
 }
 \seealso{cvmts.pval}
 \examples{

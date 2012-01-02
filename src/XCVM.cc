@@ -24,8 +24,8 @@ const int64_t CXCVM::ToInt(const double dStat) const
 
    // find the integer closer to iStat   
 
-   double dCeil = ceil( iStat );
-   double dFloor = floor( iStat );
+   double dCeil = std::ceil( iStat );
+   double dFloor = std::floor( iStat );
 
    return (dFloor+dCeil < 2*iStat) ? 	 
 	   static_cast<int64_t>(dCeil) : static_cast<int64_t>(dFloor);
